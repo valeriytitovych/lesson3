@@ -1,35 +1,251 @@
 /* RESET Styles */
-body, p {
-    margin: 0;
+body, p, h1, h2, ul {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
 }
 
 /* BASE */
 * {
-    box-sizing: border-box;
-} 
+  box-sizing: border-box;
+}
 
 html, body {
-    height: 100%;
+  height: 100%;
 }
 
 body {
-    background-color: #fff;
-    font-family: Arial, Helvetica, sans-serif;
+  background-color: #fff;
+  font-family: 'Montserrat', sans-serif;
+}
+/* content */
+.content {
+  display: flex;
+  min-height: 100%;
+  min-width: 100%;
 }
 
+/* Left Side */
 .left-side {
-    background-color: #09233a;
-    color: #fff;
+  width: 450px;
+  background-color: #09233a;
+  color: #fff;
 }
 
 .main-info {
-    padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 56px 24px 80px;
 }
 
 .user-photo {
-    width: 250px;
-    height: 250px;
-    border: 4px solid #fff;
-    border-radius: 50%;
-    background-image: url("./my-photo-thumbnail.png") no-repeat center/cover;
+  width: 250px;
+  height: 250px;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  background: url('./img/user-photo.png') no-repeat center/cover;
+}
+
+.user-label {
+  position: relative;
+  display: inline-block;
+  padding: 8px 15px;
+  margin: 40px 0 15px;
+  background-color: #00152a;
+}
+
+.user-label::before {
+  content: '';
+  position: absolute;
+  left: calc(50% - 5px);
+  bottom: -10px;
+  border-top: 10px solid #00152a;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+
+.user-name {
+  margin-top: 18px;
+  font-size: 38px;
+  text-transform: uppercase;
+  
+}
+
+.user-name-first {
+  font-weight: 300;
+}
+
+.user-name-second {
+  font-weight: 600;
+}
+
+.left-side-card-contacts .card-title {
+  display: flex;
+  align-items: center;
+  padding: 12px 24px;
+  background-color: #00152a;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.left-side-card-contacts .title-icon {
+  margin-right: 16px;
+  font-size: 32px;
+}
+
+.left-side-card-contacts .card-content {
+  padding: 24px 36px;
+}
+
+.contacts-list-item {
+  display: flex;
+  align-items: center;
+}
+
+.contacts-list-item:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.contacts-list-icon {
+  margin-right: 12px;
+}
+
+.contacts-list-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.contacts-list-link:hover {
+  text-decoration: underline;
+}
+
+.left-side-card-languages .card-title {
+  display: flex;
+  align-items: center;
+  padding: 12px 24px;
+  background-color: #00152a;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 20px;  
+}
+
+/* right side */
+.right-side {
+  width: calc(100% - 450px);
+}
+
+.right-side-card {
+  display: flex;  
+  
+}
+
+.right-side-card .card-title {  
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 25px 0;  
+  width: 50px;
+  border-radius: 0 25px 25px 0;  
+}
+
+.right-side-card .card-totle-top-border,
+.right-side-card .card-totle-bottom-border {
+  position: absolute;  
+  left: 0;
+  width: 25px;
+  height: 25px;
+}
+
+.right-side-card .card-totle-top-border::before,
+.right-side-card .card-totle-bottom-border::before {
+  display: block; 
+  content: "";
+  height: 25px;
+  width: 25px;
+  background-color: #fff;
+}
+
+.right-side-card .card-totle-top-border::before {
+  border-radius: 0 0 0 15px;
+}
+
+.right-side-card .card-totle-bottom-border::before {
+  border-radius: 15px 0 0 0;
+}
+
+.right-side-card .card-title-text {
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #fff;
+  white-space: nowrap;
+  transform: rotate(-90deg);
+}
+
+
+.right-side-card .card-content {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 0 24px 15px;
+  margin: 0 24px 0 58px;
+  min-height: 250px;
+}
+
+.right-side-card:not(:last-child) .card-content {
+  border-bottom: 1px solid #ebebeb;
+}
+
+.right-side-card .card-icon {
+  margin-left: 15px;
+  font-size: 56px;
+}
+
+.education .card-title {
+  min-height: 200px;
+  background-color: #f87600;
+}
+
+.education .card-icon {
+  color: #f87600;
+}
+
+.education-item {
+  display: flex;
+}
+
+.education-institution {
+  padding-left: 24px;
+}
+
+.education-year,
+.education-institution-title,
+.skills-title {
+  font-weight: 500;
+}
+
+.education-institution-subtitle,
+.skills-description {
+  color: #777;
+}
+
+.skills .card-title {
+  min-height: 350px;
+  background-color: #6b009e;
+}
+
+.skills .card-icon {
+  color: #6b009e;
+}
+
+.skills-list-item:not(:last-child) {
+  padding-bottom: 15px;
 }
